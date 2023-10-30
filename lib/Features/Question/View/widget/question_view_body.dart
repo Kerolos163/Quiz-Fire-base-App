@@ -23,7 +23,7 @@ class QuestionViewBody extends StatelessWidget {
                 Text(
                   QuestionCubit.get(context).data["wordList"][
                       QuestionCubit.get(context).questionList[
-                          QuestionCubit.get(context).questionNumber]]["word"],
+                          QuestionCubit.get(context).questionList.length-1]]["word"],
                   style: const TextStyle(fontSize: 40),
                 ),
                 const Spacer(flex: 6),
