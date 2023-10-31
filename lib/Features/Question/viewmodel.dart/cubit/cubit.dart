@@ -42,11 +42,16 @@ class QuestionCubit extends Cubit<QuestionState> {
 
 //we can get all
   void getRandomvariable() {
-    int randomNumber = Random().nextInt(data["wordList"].length-1) + 0;
-    print("Index $randomNumber");
-    if (!(questionList.contains(randomNumber))) {
+    print("getRandomvariable");
+    int randomNumber = Random().nextInt(data["wordList"].length - 1) + 0;
+    while (questionList.contains(randomNumber)) {
+      randomNumber = Random().nextInt(data["wordList"].length - 1) + 0;
+    }
+
+    if (questionList.length < 5) {
       questionList.add(randomNumber);
     }
+    print(questionList);
   }
 
   int studentPoint = 0;
