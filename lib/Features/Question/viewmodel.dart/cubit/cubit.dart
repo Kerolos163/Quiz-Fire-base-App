@@ -1,5 +1,7 @@
 import 'dart:math';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiztaskwithfirebase/Features/Question/View/score_view.dart';
 import 'state.dart';
 
 class QuestionCubit extends Cubit<QuestionState> {
@@ -27,8 +29,8 @@ class QuestionCubit extends Cubit<QuestionState> {
 
   List questionList = [];
   int questionNumber = 0;
-  changeQuestion({required String answer}) {
-    if (questionNumber < 5) {
+  changeQuestion(context, {required String answer}) {
+    if (questionNumber < 4) {
       checkQuestion(
           answer: answer,
           studentAnswer: data["wordList"][questionList[questionNumber]]["pos"]);
@@ -36,8 +38,10 @@ class QuestionCubit extends Cubit<QuestionState> {
 
       getRandomvariable();
       emit(ChangeQuestionState());
+    } else {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const ScoreView()));
     }
-    print(studentPoint);
   }
 
 //we can get all
@@ -59,5 +63,11 @@ class QuestionCubit extends Cubit<QuestionState> {
     if (answer == studentAnswer) {
       studentPoint += 10;
     }
+  }
+
+  resetQuiz() {
+    questionNumber = 0;
+    studentPoint = 0;
+    emit(ResetQuizeState());
   }
 }
