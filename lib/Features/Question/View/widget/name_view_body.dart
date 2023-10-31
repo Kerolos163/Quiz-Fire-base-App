@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:quiztaskwithfirebase/Features/Question/View/question_view.dart';
 
+import '../../../../core/get_it.dart';
+
 class NameViewBody extends StatelessWidget {
   const NameViewBody({super.key});
 
@@ -45,6 +47,7 @@ class NameViewBody extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
+                    initQuestionCubit();
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
                       builder: (context) => const QuestionView(),
                     ));

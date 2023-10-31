@@ -30,7 +30,7 @@ class QuestionViewBody extends StatelessWidget {
                 myButton(
                   txt: "verb",
                   func: () {
-                    QuestionCubit.get(context).changeQuestion(answer: "verb");
+                    QuestionCubit.get(context).changeQuestion(context,answer: "verb");
                   },
                 ),
                 const SizedBox(
@@ -39,7 +39,7 @@ class QuestionViewBody extends StatelessWidget {
                 myButton(
                   txt: "noun",
                   func: () {
-                    QuestionCubit.get(context).changeQuestion(answer: "noun");
+                    QuestionCubit.get(context).changeQuestion(context,answer: "noun");
                   },
                 ),
                 const SizedBox(
@@ -48,7 +48,7 @@ class QuestionViewBody extends StatelessWidget {
                 myButton(
                   txt: "adverb",
                   func: () {
-                    QuestionCubit.get(context).changeQuestion(answer: "adverb");
+                    QuestionCubit.get(context).changeQuestion(context,answer: "adverb");
                   },
                 ),
                 const SizedBox(
@@ -58,7 +58,7 @@ class QuestionViewBody extends StatelessWidget {
                   txt: "adjective",
                   func: () {
                     QuestionCubit.get(context)
-                        .changeQuestion(answer: "adjective");
+                        .changeQuestion(context,answer: "adjective");
                   },
                 ),
                 const Spacer(),
