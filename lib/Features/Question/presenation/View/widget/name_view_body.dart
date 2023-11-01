@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:quiztaskwithfirebase/Features/Question/View/question_view.dart';
+import 'package:quiztaskwithfirebase/Features/Question/presenation/View/question_view.dart';
 
 class NameViewBody extends StatelessWidget {
   const NameViewBody({super.key});

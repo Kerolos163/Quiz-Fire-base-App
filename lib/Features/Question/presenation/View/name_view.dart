@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiztaskwithfirebase/Features/Question/View/widget/name_view_body.dart';
+import 'package:quiztaskwithfirebase/Features/Question/presenation/View/widget/name_view_body.dart';
 
 class NameView extends StatelessWidget {
   const NameView({super.key});

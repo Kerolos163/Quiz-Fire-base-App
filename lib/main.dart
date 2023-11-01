@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiztaskwithfirebase/Features/Question/View/name_view.dart';
+import 'package:quiztaskwithfirebase/Features/Question/presenation/View/name_view.dart';
 
 void main() {
   runApp(const MyApp());

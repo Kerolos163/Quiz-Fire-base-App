@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quiztaskwithfirebase/Features/Question/viewmodel.dart/cubit/cubit.dart';
-import 'package:quiztaskwithfirebase/Features/Question/viewmodel.dart/cubit/state.dart';
+import 'package:quiztaskwithfirebase/Features/Question/presenation/viewmodel.dart/cubit/cubit.dart';
+import 'package:quiztaskwithfirebase/Features/Question/presenation/viewmodel.dart/cubit/state.dart';
 
 class QuestionViewBody extends StatelessWidget {
   const QuestionViewBody({super.key});
