@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quiztaskwithfirebase/Features/Question/presenation/viewmodel.dart/cubit/cubit.dart';
-import 'package:quiztaskwithfirebase/Features/Question/presenation/viewmodel.dart/cubit/state.dart';
+import 'package:quiztaskwithfirebase/Features/Question/presenation/View/ScoreView.dart';
+import '../../viewmodel.dart/cubit/cubit.dart';
+import '../../viewmodel.dart/cubit/state.dart';
 
 class QuestionViewBody extends StatelessWidget {
   const QuestionViewBody({super.key, required this.name});
@@ -32,6 +33,12 @@ class QuestionViewBody extends StatelessWidget {
                   txt: "verb",
                   func: () {
                     QuestionCubit.get(context).changeQuestion(answer: "verb");
+                    if (QuestionCubit.get(context).questionNumber == 5) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ScoreView()));
+                    }
                   },
                 ),
                 const SizedBox(
@@ -41,6 +48,12 @@ class QuestionViewBody extends StatelessWidget {
                   txt: "noun",
                   func: () {
                     QuestionCubit.get(context).changeQuestion(answer: "noun");
+                    if (QuestionCubit.get(context).questionNumber == 5) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ScoreView()));
+                    }
                   },
                 ),
                 const SizedBox(
@@ -50,6 +63,12 @@ class QuestionViewBody extends StatelessWidget {
                   txt: "adverb",
                   func: () {
                     QuestionCubit.get(context).changeQuestion(answer: "adverb");
+                    if (QuestionCubit.get(context).questionNumber == 5) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ScoreView()));
+                    }
                   },
                 ),
                 const SizedBox(
@@ -58,8 +77,13 @@ class QuestionViewBody extends StatelessWidget {
                 myButton(
                   txt: "adjective",
                   func: () {
-                    QuestionCubit.get(context)
-                        .changeQuestion(answer: "adjective");
+                    QuestionCubit.get(context).changeQuestion(answer: "adjective");
+                    if (QuestionCubit.get(context).questionNumber == 5) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ScoreView()));
+                    }
                   },
                 ),
                 const Spacer(),
@@ -81,3 +105,18 @@ class QuestionViewBody extends StatelessWidget {
     );
   }
 }
+
+// changeQuestion(context, {required String answer}) {
+//     if (questionNumber < 4) {
+//       checkQuestion(
+//           answer: answer,
+//           studentAnswer: data["wordList"][questionList[questionNumber]]["pos"]);
+//       questionNumber = ++questionNumber;
+
+//       getRandomvariable();
+//       emit(ChangeQuestionState());
+//     } else {
+//       Navigator.push(
+//           context, MaterialPageRoute(builder: (context) => const ScoreView()));
+//     }
+//   }

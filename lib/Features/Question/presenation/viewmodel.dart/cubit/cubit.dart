@@ -60,4 +60,9 @@ class QuestionCubit extends Cubit<QuestionState> {
       studentPoint += 10;
     }
   }
+
+  resetQuiz() {
+    questionNumber = 0;
+    studentPoint = 0;
+  }
 }
