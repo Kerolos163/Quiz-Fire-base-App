@@ -46,7 +46,7 @@ class NameViewBody extends StatelessWidget {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => const QuestionView(),
+                      builder: (context) =>  QuestionView(name: controller.text),
                     ));
                   }
                 },

@@ -4,13 +4,13 @@ import 'package:quiztaskwithfirebase/Features/Question/presenation/View/widget/q
 import 'package:quiztaskwithfirebase/Features/Question/presenation/viewmodel.dart/cubit/cubit.dart';
 
 class QuestionView extends StatelessWidget {
-  const QuestionView({super.key});
-
+  const QuestionView({super.key, required this.name});
+  final String name;
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => QuestionCubit()..getRandomvariable(),
-      child: const QuestionViewBody(),
+      child: QuestionViewBody(name: name),
     );
   }
 }

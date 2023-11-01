@@ -48,7 +48,7 @@ class QuestionCubit extends Cubit<QuestionState> {
       randomNumber = Random().nextInt(data["wordList"].length - 1) + 0;
     }
 
-    if (questionList.length < 5) {
+    if (questionNumber < 5) {
       questionList.add(randomNumber);
     }
     print(questionList);

@@ -4,8 +4,8 @@ import 'package:quiztaskwithfirebase/Features/Question/presenation/viewmodel.dar
 import 'package:quiztaskwithfirebase/Features/Question/presenation/viewmodel.dart/cubit/state.dart';
 
 class QuestionViewBody extends StatelessWidget {
-  const QuestionViewBody({super.key});
-
+  const QuestionViewBody({super.key, required this.name});
+  final String name;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,8 @@ class QuestionViewBody extends StatelessWidget {
                 Text(
                   QuestionCubit.get(context).data["wordList"][
                       QuestionCubit.get(context).questionList[
-                          QuestionCubit.get(context).questionList.length-1]]["word"],
+                          QuestionCubit.get(context).questionList.length -
+                              1]]["word"],
                   style: const TextStyle(fontSize: 40),
                 ),
                 const Spacer(flex: 6),
